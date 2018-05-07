@@ -133,6 +133,9 @@ public class Controller {
               rectangle.setWidth(args[2]);
               rectangle.setHeight(args[3]);
               rectangle.setFill(Paint.valueOf(partsList.get(i).get(5)));
+              rectangle.setStroke(Paint.valueOf(partsList.get(i).get(6)));
+              rectangle.setStrokeWidth(Double.parseDouble(partsList.get(i).get(7)));
+              
               group.getChildren().add(rectangle);
               break;
             }
@@ -147,20 +150,35 @@ public class Controller {
               circle.setCenterY(args[1]);
               circle.setRadius(args[2]);
               circle.setFill(Paint.valueOf(partsList.get(i).get(4)));
+              circle.setStroke(Paint.valueOf(partsList.get(i).get(5)));
+              circle.setStrokeWidth(Double.parseDouble(partsList.get(i).get(6)));
               group.getChildren().add(circle);
               break;
             }
             case "Polygon": {
-              Double[] points = new Double[partsList.get(i).size() - 2];
+              // Creating polygon object
+              Polygon polygon = new Polygon();
+  
+              // Adding points from the file
+              Double[] points = new Double[partsList.get(i).size() - 4];
               for (int j = 0; j < points.length; j++) {
                 points[j] = Double.parseDouble(partsList.get(i).get(j + 1));
               }
-              String fill = partsList.get(i).get(partsList.get(i).size() - 1);
-              Polygon polygon = new Polygon();
-              polygon.setFill(Paint.valueOf(fill));
               for (int j = 0; j < points.length; j += 2) {
                 polygon.getPoints().addAll(points[j], points[j + 1]);
               }
+  
+              // Setting fill
+              String fill = partsList.get(i).get(partsList.get(i).size() - 3);
+              polygon.setFill(Paint.valueOf(fill));
+  
+              // Setting stroke
+              String stroke = partsList.get(i).get(partsList.get(i).size() - 2);
+              Double strokeWidth = Double.parseDouble(partsList.get(i).get(partsList.get(i).size() - 1));
+              polygon.setStroke(Paint.valueOf(stroke));
+              polygon.setStrokeWidth(strokeWidth);
+  
+              // Adding the polygon to the group
               group.getChildren().add(polygon);
             }
           }
@@ -222,6 +240,9 @@ public class Controller {
             }
           }
           shapeData += shape.getFill() + ";";
+          shapeData += shape.getStroke() + ";";
+          shapeData += shape.getStrokeWidth() + ";";
+          
           System.out.println(shapeData);
           printWriter.println(shapeData);
         }
