@@ -416,6 +416,8 @@ public class Controller {
     circle.setCenterX(event.getX());
     circle.setCenterY(event.getY());
     circle.setFill(color);
+    circle.setStroke(Color.BLACK);
+    circle.setStrokeWidth(0);
     group.getChildren().add(circle);
   
     pane.setOnMouseDragged(event1 -> {
@@ -438,6 +440,9 @@ public class Controller {
     rectangle.setX(event.getX());
     rectangle.setY(event.getY());
     rectangle.setFill(color);
+    rectangle.setStroke(Color.BLACK);
+    rectangle.setStrokeWidth(0);
+    
     group.getChildren().add(rectangle);
 
     pane.setOnMouseDragged(event1 -> {
@@ -457,6 +462,8 @@ public class Controller {
     if (event.isPrimaryButtonDown()) {
       Polygon polygon = new Polygon(event.getX(), event.getY());
       polygon.setFill(color);
+      polygon.setStroke(Color.BLACK);
+      polygon.setStrokeWidth(0);
       group.getChildren().add(polygon);
     } else if (event.isSecondaryButtonDown()) {
       try {
