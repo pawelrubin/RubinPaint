@@ -8,7 +8,10 @@ package sample;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.control.*;
-import javafx.scene.input.*;
+import javafx.scene.input.ContextMenuEvent;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
@@ -19,6 +22,7 @@ import javafx.scene.shape.Shape;
 import javafx.scene.transform.Scale;
 import javafx.scene.transform.Translate;
 import javafx.stage.FileChooser;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -173,11 +177,9 @@ public class Controller {
   @FXML private void infoButton() {
     Alert alert = new Alert(Alert.AlertType.INFORMATION);
     alert.setTitle("About");
-    alert.setHeaderText("MacynPaint2137");
-    alert.setContentText("This is simple graphic editor.");
-  
+    alert.setHeaderText("RubinPaint");
+    alert.setContentText("This is simple graphic editor by Pawel Rubin");
     alert.showAndWait();
-    
   }
   
   /**

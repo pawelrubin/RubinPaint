@@ -14,9 +14,10 @@ public class Main extends Application {
     public void start(final Stage primaryStage) throws Exception{
         Main.primaryStage = primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("MacynPaint2137");
-        primaryStage.setScene(new Scene(root, 1600, 400));
-        //primaryStage.setResizable();
+      primaryStage.setTitle("RubinPaint");
+      primaryStage.setScene(new Scene(root));
+      primaryStage.setMaximized(true);
+      primaryStage.setResizable(false);
         primaryStage.show();
     }
 
