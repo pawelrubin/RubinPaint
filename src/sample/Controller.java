@@ -55,7 +55,7 @@ public class Controller {
   }
   
   /**
-   * Method sets typeOfShape to 1 and mode to "Creation".
+   * Method sets typeOfShape to Circle and mode to "Creation".
    */
   @FXML private void circleButton() {
     mode = "Creation";
@@ -63,7 +63,7 @@ public class Controller {
   }
   
   /**
-   * Method sets typeOfShape to 2 and mode to "Creation".
+   * Method sets typeOfShape to Rectangle and mode to "Creation".
    */
   @FXML private void rectangleButton() {
     mode = "Creation";
@@ -71,7 +71,7 @@ public class Controller {
   }
   
   /**
-   * Method sets typeOfShape to 3 and mode to "Creation".
+   * Method sets typeOfShape to Polygon and mode to "Creation".
    */
   @FXML private void polygonButton() {
     mode = "Creation";
