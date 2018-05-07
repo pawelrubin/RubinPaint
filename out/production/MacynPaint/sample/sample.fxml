@@ -27,7 +27,7 @@
         </Menu>
     </MenuBar>
 
-    <ToolBar fx:id="toolBar">
+    <ToolBar>
         <Button onAction="#circleButton" text="Circle" />
         <Button onAction="#rectangleButton" text="Rectangle" />
         <Button onAction="#polygonButton" text="Polygon" />
