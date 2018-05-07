@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+
+<VBox xmlns="http://javafx.com/javafx/8.0.161" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <MenuBar>
+        <Menu text="File">
+            <MenuItem onAction="#saveButton" text="Save" />
+            <MenuItem onAction="#openButton" text="Open" />
+            <SeparatorMenuItem />
+            <MenuItem onAction="#exitButton" text="Exit" />
+        </Menu>
+        <Menu  text="Info">
+            <MenuItem onAction="#infoButton" text="About"/>
+        </Menu>
+    </MenuBar>
+
+    <ToolBar>
+        <Button onAction="#circleButton" text="Circle" />
+        <Button onAction="#rectangleButton" text="Rectangle" />
+        <Button onAction="#polygonButton" text="Polygon" />
+        <ColorPicker fx:id="colorPicker" onAction="#colorPick" />
+        <Button onAction="#editButton" text="Edit" />
+        <Button text="Clear" onAction="#clearButton" />
+        <Label fx:id="label" />
+    </ToolBar>
+
+    <Pane fx:id="pane" minHeight="${vBox.height}" minWidth="${vBox.width}" onMousePressed="#shapeCreation" >
+        <clip>
+            <Rectangle height="${pane.height}" width="${pane.width}"/>
+        </clip>
+        <Group fx:id="group" onMousePressed="#getPress" onMouseDragged="#shapeMove" onScroll="#shapeScale" onContextMenuRequested="#contextMenu"/>
+    </Pane>
+    <stylesheets>
+        <URL value="@stylesheet.css" />
+    </stylesheets>
+</VBox>
