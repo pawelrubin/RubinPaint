@@ -100,7 +100,7 @@ public class Controller {
   }
   
   /**
-   *
+   *  Methods handling file opening
    */
   @FXML private void openButton() {
     FileChooser fileChooser = new FileChooser();
@@ -271,12 +271,18 @@ public class Controller {
       slider.setValue(1);
       MenuItem strokeButton = new MenuItem("Set Stroke", slider);
       contextMenu.getItems().add(strokeButton);
-      
       strokeButton.setOnAction(event1 -> {
         ((Shape) event.getTarget()).setStroke(Color.BLACK);
         ((Shape) event.getTarget()).setStrokeWidth(slider.getValue());
       });
-      
+      /*
+      MenuItem up = new MenuItem();
+      up.setOnAction(event1 -> {
+        group.getChildren())
+        ((Shape) event.getTarget()).getId();
+      });
+      contextMenu.getItems().add(up)
+              */
       contextMenu.show((Shape) event.getTarget(), event.getScreenX(), event.getScreenY());
       contextMenu.setAutoHide(true);
     }
