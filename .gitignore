@@ -30,8 +30,10 @@ hs_err_pid*
 *.xml
 *.json
 **/out
-
+*.iml
 # other
 **/JavaDoc
 **/latex
 **/html
+Doxyfile
+**/saves/
